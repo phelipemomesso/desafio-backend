@@ -3,6 +3,7 @@
 namespace Modules\User\Services;
 
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Auth;
 use Modules\Core\Services\BaseService;
 use Modules\User\Criteria\UserCriteria;
 use Modules\User\Repositories\UserRepository;
@@ -42,5 +43,16 @@ class UserService extends BaseService
     {
         $entity = $this->repository->update($attributes, $id);
         return $this->find($entity->{$entity->getKeyName()});
+    }
+
+
+    public function delete($id)
+    {
+        $entity = $this->repository->find($id);
+
+        if ($entity->id == Auth::id())
+            throw new \Exception('You can not delete your user!');
+
+        
     }
 }

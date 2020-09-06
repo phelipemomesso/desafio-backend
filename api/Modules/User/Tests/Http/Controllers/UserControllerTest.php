@@ -55,7 +55,7 @@ class UserControllerTest extends TestCase
 
         $data = $response->json();
 
-       // $this->assertTrue(Hash::check($password, User::find($data['data']['id'])->password));
+        // $this->assertTrue(Hash::check($password, User::find($data['data']['id'])->password));
         $response->assertStatus(Response::HTTP_CREATED);
         $response->assertJsonStructure($this->jsonStructure());
     }

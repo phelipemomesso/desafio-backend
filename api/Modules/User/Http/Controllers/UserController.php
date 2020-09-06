@@ -47,10 +47,13 @@ class UserController extends Controller
      */
     public function store(UserRequest $request)
     {
-
-        $entity = $this->service->create($request->all());
-        $data = UserResource::make($this->service->find($entity->id));
-        return response()->json(['data' => $data], Response::HTTP_CREATED);
+        try {
+            $entity = $this->service->create($request->all());
+            $data = UserResource::make($this->service->find($entity->id));
+            return response()->json(['data' => $data], Response::HTTP_CREATED);
+        } catch (\Exception $e) {
+            return response()->json(['message' => $e->getMessage()], 500);
+        }
     }
 
     /**
@@ -61,7 +64,11 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        return UserResource::make($this->service->find($id));
+        try {
+            return UserResource::make($this->service->find($id));
+        } catch (\Exception $e) {
+            return response()->json(['message' => $e->getMessage()], 500);
+        }
     }
 
     /**
@@ -73,8 +80,12 @@ class UserController extends Controller
      */
     public function update(UserRequest $request, $id)
     {
-        $entity = $this->service->update($request->all(), $id);
-        return UserResource::make($this->service->find($entity->id));
+        try {
+            $entity = $this->service->update($request->all(), $id);
+            return UserResource::make($this->service->find($entity->id));
+        } catch (\Exception $e) {
+            return response()->json(['message' => $e->getMessage()], 500);
+        }
     }
 
     /**
@@ -85,7 +96,11 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $data = $this->service->delete($id);
-        return response()->json(['data' => $data], Response::HTTP_NO_CONTENT);
+        try {
+            $data = $this->service->delete($id);
+            return response()->json(['data' => $data], Response::HTTP_NO_CONTENT);
+        } catch (\Exception $e) {
+            return response()->json(['message' => $e->getMessage()],500);
+        }
     }
 }
