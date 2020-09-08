@@ -69,7 +69,7 @@ class UserControllerTest extends TestCase
     {
         return [
             'data' => [
-                'id', 'name', 'email', 'birthdate', 'created_at', 'updated_at',
+                'id', 'name', 'email', 'birthdate', 'initial_amount', 'current_amount', 'created_at', 'updated_at',
             ],
         ];
     }

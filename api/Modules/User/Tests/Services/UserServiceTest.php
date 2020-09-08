@@ -65,7 +65,7 @@ class UserServiceTest extends TestCase
     private function dataStructure()
     {
         return [
-            'id', 'name', 'email', 'birthdate', 'created_at', 'updated_at',
+            'id', 'name', 'email', 'birthdate', 'initial_amount', 'current_amount', 'created_at', 'updated_at',
         ];
     }
 
