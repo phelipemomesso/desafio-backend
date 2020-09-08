@@ -5,6 +5,7 @@ namespace Modules\User\Http\Controllers;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Modules\User\Http\Requests\UserAmountRequest;
 use Modules\User\Http\Requests\UserRequest;
 use Modules\User\Http\Resources\UserResource;
 use Modules\User\Services\UserService;
@@ -99,6 +100,23 @@ class UserController extends Controller
         try {
             $data = $this->service->delete($id);
             return response()->json(['data' => $data], Response::HTTP_NO_CONTENT);
+        } catch (\Exception $e) {
+            return response()->json(['message' => $e->getMessage()], 500);
+        }
+    }
+
+    /**
+     * Update the amount from a specified resource in storage.
+     *
+     * @param UserAmountRequest $request
+     * @param int $id
+     * @return UserResource
+     */
+    public function updateInitialAmount(UserAmountRequest $request, $id)
+    {
+        try {
+            $entity = $this->service->initialAmount($request->all(), $id);
+            return UserResource::make($this->service->find($entity->id));
         } catch (\Exception $e) {
             return response()->json(['message' => $e->getMessage()], 500);
         }

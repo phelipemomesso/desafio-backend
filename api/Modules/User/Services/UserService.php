@@ -54,4 +54,19 @@ class UserService extends BaseService
             throw new \Exception('You can not delete your user!');
         }
     }
+
+
+    /**
+     * Update initial amount entity in repository by id.
+     *
+     * @param array $attributes
+     * @param $id
+     *
+     * @return mixed
+     */
+    public function initialAmount(array $attributes, $id)
+    {
+        $entity = $this->repository->update($attributes, $id);
+        return $this->find($entity->{$entity->getKeyName()});
+    }
 }

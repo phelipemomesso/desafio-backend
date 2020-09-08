@@ -13,4 +13,5 @@
 
 Route::group(['prefix' => 'user', 'as' => 'user.', 'middleware' => ['auth:api']], function () {
     Route::apiResource('users', 'UserController');
+    Route::put('{user}/initial-amount', ['as' => 'update-initial-amount', 'uses' => 'UserController@updateInitialAmount']);
 });
