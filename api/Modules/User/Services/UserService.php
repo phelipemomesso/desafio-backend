@@ -45,7 +45,13 @@ class UserService extends BaseService
         return $this->find($entity->{$entity->getKeyName()});
     }
 
-
+    /**
+     * Delete a entity in repository by id.
+     *
+     * @param $id
+     *
+     * @return mixed
+     */
     public function delete($id)
     {
         $entity = $this->repository->find($id);
@@ -76,6 +82,14 @@ class UserService extends BaseService
         return $this->find($entity->{$entity->getKeyName()});
     }
 
+
+    /**
+     * Get balance entity in repository by id.
+     *
+     * @param $id
+     *
+     * @return mixed
+     */
     public function balance($id)
     {
         $entity = $this->repository->find($id);
