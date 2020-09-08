@@ -6,35 +6,35 @@ services:
 
     redis:
       image: redis:alpine
-      container_name: owinteractive-redis
+      container_name: ow-interactive-redis
 
     mysql:
-      image: mysql:8.0
-      container_name: owinteractive-mysql
+      image: mysql:5.7
+      container_name: ow-interactive-mysql
       working_dir: /application
       volumes:
         - .:/application
       environment:
         - MYSQL_ROOT_PASSWORD=root
         - MYSQL_DATABASE=ow
-        - MYSQL_USER=user
-        - MYSQL_PASSWORD=root
+        - MYSQL_USER=ow
+        - MYSQL_PASSWORD=ow123
       ports:
-        - "1210:3306"
+        - "8890:3306"
 
     webserver:
       image: nginx:alpine
-      container_name: owinteractive-webserver
+      container_name: ow-interactive-webserver
       working_dir: /application
       volumes:
           - .:/application
           - ./phpdocker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
       ports:
-       - "1208:80"
+       - "8888:80"
 
     php-fpm:
       build: phpdocker/php-fpm
-      container_name: owinteractive-php-fpm
+      container_name: ow-interactive-php-fpm
       working_dir: /application
       volumes:
         - .:/application
