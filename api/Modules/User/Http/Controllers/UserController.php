@@ -121,4 +121,14 @@ class UserController extends Controller
             return response()->json(['message' => $e->getMessage()], 500);
         }
     }
+
+    public function balance($id)
+    {
+        try {
+            $data = $this->service->balance($id);
+            return response()->json(['balance' => $data], Response::HTTP_OK);
+        } catch (\Exception $e) {
+            return response()->json(['message' => $e->getMessage()], 500);
+        }
+    }
 }

@@ -69,4 +69,10 @@ class UserService extends BaseService
         $entity = $this->repository->update($attributes, $id);
         return $this->find($entity->{$entity->getKeyName()});
     }
+
+    public function balance($id)
+    {
+        $entity = $this->repository->find($id);
+        return $entity->initial_amount + $entity->current_amount;
+    }
 }
