@@ -50,9 +50,8 @@ class UserService extends BaseService
     {
         $entity = $this->repository->find($id);
 
-        if ($entity->id == Auth::id())
+        if ($entity->id == Auth::id()) {
             throw new \Exception('You can not delete your user!');
-
-        
+        }
     }
 }

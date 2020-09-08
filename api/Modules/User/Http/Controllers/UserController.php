@@ -100,7 +100,7 @@ class UserController extends Controller
             $data = $this->service->delete($id);
             return response()->json(['data' => $data], Response::HTTP_NO_CONTENT);
         } catch (\Exception $e) {
-            return response()->json(['message' => $e->getMessage()],500);
+            return response()->json(['message' => $e->getMessage()], 500);
         }
     }
 }
