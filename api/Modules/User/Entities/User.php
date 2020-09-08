@@ -5,6 +5,7 @@ namespace Modules\User\Entities;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
+use Modules\Transaction\Entities\Transaction;
 
 class User extends Authenticatable
 {
@@ -43,4 +44,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
+    }
 }

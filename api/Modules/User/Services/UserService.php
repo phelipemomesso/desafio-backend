@@ -53,6 +53,12 @@ class UserService extends BaseService
         if ($entity->id == Auth::id()) {
             throw new \Exception('You can not delete your user!');
         }
+
+        if ($entity->initial_amount > 0 or $entity->current_amount > 0 or $entity->transactions()->exists()) {
+            throw new \Exception('You can not delete a user with a balance or transaction!');
+        }
+
+        return $this->repository->delete($id);
     }
 
 
