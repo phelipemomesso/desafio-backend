@@ -4,6 +4,8 @@ namespace Modules\Transaction\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
+use Modules\Transaction\Entities\Transaction;
+use Modules\Transaction\Observers\TransactionObserver;
 use Modules\Transaction\Repositories;
 
 class TransactionServiceProvider extends ServiceProvider
@@ -30,6 +32,8 @@ class TransactionServiceProvider extends ServiceProvider
         $this->registerViews();
         $this->registerFactories();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
+
+        Transaction::observe(TransactionObserver::class);
     }
 
     /**
