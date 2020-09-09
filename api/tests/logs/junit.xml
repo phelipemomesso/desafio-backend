@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Modules" tests="11" assertions="77" errors="0" warnings="0" failures="0" skipped="0" time="52.442758">
+    <testsuite name="Modules\User\Tests\Http\Controllers\Tests\UserControllerTest" file="/application/modules/User/Tests/Http/Controllers/UserControllerTest.php" tests="5" assertions="44" errors="0" warnings="0" failures="0" skipped="0" time="28.271618">
+      <testcase name="testItCanCreateResource" class="Modules\User\Tests\Http\Controllers\Tests\UserControllerTest" classname="Modules.User.Tests.Http.Controllers.Tests.UserControllerTest" file="/application/modules/User/Tests/Http/Controllers/UserControllerTest.php" line="40" assertions="10" time="13.288895"/>
+      <testcase name="testItCanListingResource" class="Modules\User\Tests\Http\Controllers\Tests\UserControllerTest" classname="Modules.User.Tests.Http.Controllers.Tests.UserControllerTest" file="/application/modules/User/Tests/Http/Controllers/UserControllerTest.php" line="82" assertions="10" time="4.529343"/>
+      <testcase name="testItCanShowResource" class="Modules\User\Tests\Http\Controllers\Tests\UserControllerTest" classname="Modules.User.Tests.Http.Controllers.Tests.UserControllerTest" file="/application/modules/User/Tests/Http/Controllers/UserControllerTest.php" line="112" assertions="10" time="3.316644"/>
+      <testcase name="testItCanUpdateResource" class="Modules\User\Tests\Http\Controllers\Tests\UserControllerTest" classname="Modules.User.Tests.Http.Controllers.Tests.UserControllerTest" file="/application/modules/User/Tests/Http/Controllers/UserControllerTest.php" line="134" assertions="13" time="3.888977"/>
+      <testcase name="testItCanDestroyResource" class="Modules\User\Tests\Http\Controllers\Tests\UserControllerTest" classname="Modules.User.Tests.Http.Controllers.Tests.UserControllerTest" file="/application/modules/User/Tests/Http/Controllers/UserControllerTest.php" line="164" assertions="1" time="3.247759"/>
+    </testsuite>
+    <testsuite name="Modules\User\Tests\Repositories\UserRepositoryTest" file="/application/modules/User/Tests/Repositories/UserRepositoryTest.php" tests="1" assertions="1" errors="0" warnings="0" failures="0" skipped="0" time="1.965952">
+      <testcase name="testItCanSpecifyModelClassName" class="Modules\User\Tests\Repositories\UserRepositoryTest" classname="Modules.User.Tests.Repositories.UserRepositoryTest" file="/application/modules/User/Tests/Repositories/UserRepositoryTest.php" line="33" assertions="1" time="1.965952"/>
+    </testsuite>
+    <testsuite name="Modules\User\Tests\Services\UserServiceTest" file="/application/modules/User/Tests/Services/UserServiceTest.php" tests="5" assertions="32" errors="0" warnings="0" failures="0" skipped="0" time="22.205188">
+      <testcase name="testItCanCreateEntity" class="Modules\User\Tests\Services\UserServiceTest" classname="Modules.User.Tests.Services.UserServiceTest" file="/application/modules/User/Tests/Services/UserServiceTest.php" line="40" assertions="11" time="4.439620"/>
+      <testcase name="testItCanListingEntity" class="Modules\User\Tests\Services\UserServiceTest" classname="Modules.User.Tests.Services.UserServiceTest" file="/application/modules/User/Tests/Services/UserServiceTest.php" line="77" assertions="10" time="4.442816"/>
+      <testcase name="testItCanShowEntity" class="Modules\User\Tests\Services\UserServiceTest" classname="Modules.User.Tests.Services.UserServiceTest" file="/application/modules/User/Tests/Services/UserServiceTest.php" line="98" assertions="9" time="3.730994"/>
+      <testcase name="testItCanUpdateEntity" class="Modules\User\Tests\Services\UserServiceTest" classname="Modules.User.Tests.Services.UserServiceTest" file="/application/modules/User/Tests/Services/UserServiceTest.php" line="116" assertions="1" time="4.263369"/>
+      <testcase name="testItCanDestroyEntity" class="Modules\User\Tests\Services\UserServiceTest" classname="Modules.User.Tests.Services.UserServiceTest" file="/application/modules/User/Tests/Services/UserServiceTest.php" line="136" assertions="1" time="5.328389"/>
+    </testsuite>
+  </testsuite>
+</testsuites>
